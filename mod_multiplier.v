@@ -18,7 +18,7 @@ module mod_multiplier (
     output reg  [11:0] out_res
 );
     localparam [15:0] Q = 16'd3329; //modulus nguyên tố của ML-KEM
-    localparam [15:0] Q_INV = 16'd62207; //-Q^-1 mod 2^16
+    localparam [15:0] Q_INV = 16'd3327; //-Q^-1 mod 2^16
     
     reg [23:0] c;
     always @(posedge clk or negedge rst_n) begin
