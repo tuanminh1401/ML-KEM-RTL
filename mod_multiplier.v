@@ -30,7 +30,7 @@ module mod_multiplier (
     end
 
     wire [15:0] m = (c[15:0] * Q_INV); // m = (c * Q_INV) mod 2^16: Lấy 16 bit thấp nhất để triệt tiêu 16 bit thấp của (c + m*Q)
-    wire [31:0] t = (c + m * Q); // t = c + m * Q: Giá trị cực đại ~ 229,241,500 (< 2^28), biểu diễn vừa vặn trong 32 bit
+    wire [31:0] t = (c + m * Q); // t = c + m * Q: Giá trị cực đại ~ 229,241,500 (< 2^28), biểu diễn đủ trong 32 bit
     wire [15:0] t_high = t[31:16]; //>>16 (chia cho 16) nên lấy 31:16
     wire [16:0] t_sub = {1'b0, t_high} - {1'b0, Q}; //nếu kết quả > 3329 thì trừ đi 3329, thêm 1 bit để làm bit dấu
 
