@@ -5,27 +5,38 @@ module ntt_top (
     input wire rst_n,
     input wire start,
     input wire mode,
+    input wire sclk, 
+    input wire cs_n, 
+    input wire mosi,
     input wire [11:0] data_in,
     output wire [11:0] data_out,
     output wire done //cờ báo hoàn thành 7 tầng biến đổi
 );
     wire [2:0] current_stage;
     wire [1:0] ctrl_d;
-    wire [6:0] twiddle_addr;
     wire [11:0] twiddle_data;
+    wire twiddle_valid;
 
     wire [11:0] out_y0, out_y1;
     wire [11:0] reorder_out; //dữ liệu trích xuất sau nmi rồi vòng lại vào single-butterfly
 
-    //Khối fsm và rom hệ số xoay
-    ntt_fsm_rom u_fsm (
+    spi_slave_twiddle u_spi (
+        .clk(clk),
+        .rst_n(rst_n),
+        .sclk(sclk),
+        .cs_n(cs_n),
+        .mosi(mosi),
+        .twiddle_data(twiddle_data),
+        .twiddle_valid(twiddle_valid)
+    );
+
+    //Khối fsm
+    ntt_fsm u_fsm (
         .clk(clk),
         .rst_n(rst_n),
         .start(start),
         .current_stage(current_stage),
         .ctrl_d(ctrl_d),
-        .twiddle_addr(twiddle_addr),
-        .twiddle_data(twiddle_data),
         .done(done)
     );
 

@@ -1,0 +1,14 @@
+# Loại trừ CCTV và toàn bộ file bash
+CCTV/
+*.sh
+
+# Loại trừ file rác từ công cụ mô phỏng
+xsim.dir/
+ntt_snap/
+*.log
+*.jou
+*.pb
+*.wdb
+*.vcd
+result.txt
+*.hex
