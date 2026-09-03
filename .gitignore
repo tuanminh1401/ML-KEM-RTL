@@ -1,8 +1,7 @@
-# Loại trừ CCTV và toàn bộ file bash
 CCTV/
-*.sh
+sim.sh
 
-# Loại trừ file rác từ công cụ mô phỏng
+# File rac Vivado xsim
 xsim.dir/
 ntt_snap/
 *.log
