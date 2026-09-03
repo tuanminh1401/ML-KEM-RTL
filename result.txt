@@ -1,0 +1,34 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri Sep  4 00:28:18 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ntt_snap/xsim_script.tcl
+# xsim {ntt_snap} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+=================================================
+Khoi tao vector da thuc dau vao s[0]
+- s[0][0] = 1
+- s[0][255] = 3328
+=================================================
+Nap thanh cong he so xoay: zeta = 1665
+ - Kiem tra canh buom don vi: y0 = 1, y1 = 1
+kich hoat xung start, loi NTT bat dau xu li 7 tang
+=================================================
+Ket qua
+Phat hien xung done -> hoan thanh thuat toan
+Tong thoi gian: 896 chu ki clock
+ - Gia tri ngõ ra RTL : 2594
+ - Gia tri moc ky vong: 2594
+PASS ASSERTION!
+Gia tri data_out = Ky vong (2594 == 2594)!
+Gia tri hop le trong truong (0 <= 2594 < 3329)
+=================================================
+$stop called at time : 9885 ns : File "D:/intelFPGA_lite/Project/MLKEM_RTL/ntt_top_tb.sv" Line 207
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Sep  4 00:28:20 2026...
