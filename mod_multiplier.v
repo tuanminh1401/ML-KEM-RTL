@@ -2,7 +2,7 @@
 // 1.Tham số hệ thống:
 // - Modulus nguyên tố: q = 3329 (12-bit)
 // - Montgomery Radix: R = 2^16 = 65536
-// - Hằng số nghịch đảo: q_inv = -q^-1 mod R = 62207 (16-bit)
+// - Hằng số nghịch đảo: q_inv = -q^-1 mod R = 3327 (16-bit)
 // 2.Các bước toán học:
 // - B1: Tính tích c = in_a * in_b
 // - B2: Tính hệ số triệt tiêu m = (c mod R) * q_inv mod R = (c[15:0] * 62207) mod 2^16
